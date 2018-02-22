@@ -13,7 +13,7 @@ public class Player {
         return lifeCount > 0;
     }
 
-    public  void addReward(int rewardValue) {
+    public void addReward(int rewardValue) {
         reward += rewardValue;
     }
 
@@ -34,7 +34,9 @@ public class Player {
     }
 
     public void useSecondChance() {
-        lifeCount++;
-        hasSecondChance = false;
+        if(hasSecondChance) {
+            lifeCount++;
+            hasSecondChance = false;
+        }
     }
 }
